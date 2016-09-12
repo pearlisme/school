@@ -10,3 +10,9 @@ git push -u origin master
 
 git remote add origin https://github.com/pearlisme/school.git
 git push -u origin master
+
+
+
+Mongoose
+
+npm install mongoose --save

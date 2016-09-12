@@ -1,24 +1,38 @@
 var express = require('express');
 var router = express.Router();
+var userService = require('../services/user-service');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
+
 router.get('/createuser', function(req, res, next) {
-
   var vm = {
-    title: 'Create new User for the system',
-    input: req.body,
-    error: 'Some thing goes wrong'
-  };
-  delete vm.input.password;
-  return res.render('createuser', vm);
+    title: 'Welcome to create user',
 
-  // var somethingGoesWrong = true;
-  // if (somethingGoesWrong) {
-  //   res.redirect('/home');
-  // }
+  };
+  res.render('createuser', vm);
+});
+router.post('/persistuser', function(req, res, next) {
+
+  userservice.addUser(req.body, function(err) {
+
+    if (err) {
+
+
+      var vm = {
+        title: 'Create new User for the system',
+        input: req.body,
+        error: 'Something went wrong'
+      };
+      delete vm.input.password;
+      return res.render('users/persistuser', vm);
+    }
+
+    res.redirect('/home');
+
+  });
 });
 
 
