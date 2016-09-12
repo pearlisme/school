@@ -20,6 +20,12 @@ router.get('/admin', function(req, res, next) {
   res.render('admin',vm );
 });
 
+/* GET Validate login page. */
+router.post('/validate', function(req, res, next) {
+  console.log(req.Login);
+  res.render('home', { title: 'Welcome to SchoolMGMT' });
+});
+
 
 
 module.exports = router;
