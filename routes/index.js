@@ -9,9 +9,14 @@ router.get('/', function(req, res, next) {
 router.get('/home', function(req, res, next) {
   res.render('home', { title: 'Welcome to SchoolMGMT' });
 });
-/* GET home page. */
+/* GET Admin page. */
 router.get('/admin', function(req, res, next) {
-  var vm ={ title: 'Adminstator' };
+  // var date_on = new Date().format('m-d-Y h:i:s');
+  var vm ={ title: 'Welcome to Admin page',
+            user:'Adminstrator',
+            id: 1201
+           
+  };
   res.render('admin',vm );
 });
 

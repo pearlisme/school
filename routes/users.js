@@ -6,17 +6,19 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 router.get('/createuser', function(req, res, next) {
-  var somethingGoesWrong = true;
-  if (somethingGoesWrong) {
-    var vm = {
-      title: 'Create new User for the system',
-      input: req.body,
-      error: 'Some thing goes wrong'
-    };
-    delete vm.input.password;
-   return res.render('createuser', vm);
-  }
-  res.redirect('/home');
+
+  var vm = {
+    title: 'Create new User for the system',
+    input: req.body,
+    error: 'Some thing goes wrong'
+  };
+  delete vm.input.password;
+  return res.render('createuser', vm);
+
+  // var somethingGoesWrong = true;
+  // if (somethingGoesWrong) {
+  //   res.redirect('/home');
+  // }
 });
 
 
