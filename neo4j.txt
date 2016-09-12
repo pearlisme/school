@@ -1,0 +1,13 @@
+sudo add-apt-repository ppa:openjdk-r/ppa
+sudo apt-get update
+sudo apt-get install openjdk-8-jdk
+sudo update-alternatives --config java
+sudo update-alternatives --config javac
+
+
+
+wget -O - http://debian.neo4j.org/neotechnology.gpg.key | apt-key add -
+echo 'deb http://debian.neo4j.org/repo stable/' > /etc/apt/sources.list.d/neo4j.list
+apt-get update
+apt-get install neo4j
+service neo4j-service status

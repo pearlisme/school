@@ -5,8 +5,11 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
-router.get('/createuser', function(req, res, next) {
-  res.render('createuser', { title: 'Create new User for the system' });
+router.get('/createstudent', function(req, res, next) {
+  var vm ={
+     title: 'Create new User for the system' 
+  };
+  res.render('createstudent', vm);
 });
 
 

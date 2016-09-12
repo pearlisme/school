@@ -5,8 +5,8 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
-router.get('/createuser', function(req, res, next) {
-  res.render('createuser', { title: 'Create new User for the system' });
+router.get('/createstaff', function(req, res, next) {
+  res.render('createstaff', { title: 'Create new User for the system' });
 });
 
 
