@@ -9,6 +9,12 @@ router.get('/', function(req, res, next) {
 router.get('/home', function(req, res, next) {
   res.render('home', { title: 'Welcome to SchoolMGMT' });
 });
+/* GET home page. */
+router.get('/admin', function(req, res, next) {
+  var vm ={ title: 'Adminstator' };
+  res.render('admin',vm );
+});
+
 
 
 module.exports = router;
